@@ -1,0 +1,15 @@
+{
+  "name": "methood",
+  "version": "0.0.0",
+  "description": "this is how i go about my business.",
+  "main": "index.js",
+  "scripts": {
+	  "test": "./node_modules/.bin/mocha index.spec.js"
+  },
+  "author": "mike chevett",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.19.0"
+  }
+}
