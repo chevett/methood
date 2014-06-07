@@ -86,4 +86,40 @@ describe('methood', function(){
 		var instance = new C();
 		expect(instance.p()).to.be.eql(instance);
 	});
+	it('should allow overloading', function(){
+		function C(){
+
+			var method = methood(this);
+			method('p', function(){ return 0; });
+			method('p', function(a){ return 1; });
+			method('p', function(a, b){ return 2; });
+
+		}
+
+		var instance = new C();
+		expect(instance.p()).to.be.eql(0);
+		expect(instance.p(777)).to.be.eql(1);
+		expect(instance.p(777, 888)).to.be.eql(2);
+	});
+	it('should allow overloading and alaising at the same time', function(){
+		function C(){
+
+			var method = methood(this);
+			method(['p', 'm'], function(){ return 0; });
+			method(['p', 'm'], function(a){ return 1; });
+			method(['p', 'm', 'nbd'], function(a, b){ return 2; });
+
+		}
+
+		var instance = new C();
+		expect(instance.p()).to.be.equal(0);
+		expect(instance.p(777)).to.be.equal(1);
+		expect(instance.p(777, 888)).to.be.equal(2);
+
+		expect(instance.m()).to.be.equal(0);
+		expect(instance.m(777)).to.be.equal(1);
+		expect(instance.m(777, 888)).to.be.equal(2);
+
+		expect(instance.nbd(777, 888)).to.be.equal(2);
+	});
 });

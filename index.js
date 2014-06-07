@@ -20,8 +20,18 @@ var methood = function(self) {
 			throw new Error('you gave me bad second parameter...');
 		}
 
+		var oldFn = self[names[0]];
+
+		var newFn = function(){
+			if (fn.length === arguments.length){
+				return fn.apply(self, arguments);
+			} else {
+				return oldFn.apply(self, arguments);
+			}
+		};
+
 		names.forEach(function(name){
-			self[name] = fn;
+			self[name] = newFn;
 		});
 	};
 };
