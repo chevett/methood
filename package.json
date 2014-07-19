@@ -1,15 +1,32 @@
 {
   "name": "methood",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "this is how i go about my business.",
   "main": "index.js",
   "scripts": {
-	  "test": "./node_modules/.bin/mocha index.spec.js"
+    "test": "mocha index.spec.js"
   },
   "author": "mike chevett",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^1.9.1",
     "mocha": "^1.19.0"
-  }
+  },
+  "dependencies": {
+    "chai": "^1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chevett/methood.git"
+  },
+  "keywords": [
+    "method",
+    "oop",
+    "lame",
+    "experiment"
+  ],
+  "bugs": {
+    "url": "https://github.com/chevett/methood/issues"
+  },
+  "homepage": "https://github.com/chevett/methood"
 }
