@@ -1,4 +1,4 @@
-methood [![Build Status](https://travis-ci.org/rrrelay/methood.png)](https://travis-ci.org/rrrelay/methood)
+methood [![Build Status](https://travis-ci.org/rrrelay/methood.png)](https://travis-ci.org/chevett/methood)
 =========
 
 create methods the bad way.
