@@ -23,7 +23,9 @@ var methood = function(self) {
 		var oldFn = self[names[0]];
 
 		var newFn = function(){
-			if (!oldFn || fn.length === arguments.length){
+			var length = +fn.len || fn.length;
+
+			if (!oldFn || arguments.length === length){
 				return fn.apply(self, arguments);
 			} else {
 				return oldFn.apply(self, arguments);
